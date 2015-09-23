@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getData</title>
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		var sn="北京市";
+		var en="上海市";
+		var url="http://map.baidu.com/?newmap=1&reqflag=pcmap&biz=1&pcevaname=pc2&da_par=direct&from=webmap&qt=nav&da_src=pcmappg.searchBox.button&c=289&sn=2$$$$$$"+
+		sn+"$$0$$$$&en=2$$$$$$"+
+		en+"$$0$$$$&sc=289&ec=289&rn=5&extinfo=63&tn=B_NORMAL_MAP&nn=0&ie=utf-8&l=12&b=(13503777.31,3639994.64;13542753.31,3642234.64)&t=1443022534161";
+
+		$.ajax({
+			url:url,
+			type:"get",
+			dataType:"jsonp",
+	 		jsonp:"callback",
+			success:function(res){
+				console.log(res)
+			},
+			error:function(e){
+				console.log(e)
+			}
+		})
+	</script>
+</body>
+</html>
